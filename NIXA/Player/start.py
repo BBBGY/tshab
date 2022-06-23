@@ -36,31 +36,57 @@ async def _human_time_duration(seconds):
 async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{START_PIC}",
-        caption=f"""**هلا عيوني 
-انا اقوا 🥇 بوت متطور مميزات متعددة.
-لتشغيل الاغاني في المكالمات الصوتية..
+        caption=f"""**🥇 ههݪاެ حبيب 
+
+ اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇. 
+
+اެضغط عݪى ࢪ࣪ࢪ الاۅاެمࢪ لݪاستخداެم 🤍.
+
+
 **""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "☬ اضفني الى مجموعتك ☬", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "🥇اެضفني اެݪى مجمۅٛعتك🥇 ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🖥 ¦ الأوامــر", url=f"https://telegra.ph/%D8%B3%D9%88%D8%B1%D8%B3-%D9%83%D9%88%D8%A8%D8%B1%D8%A7-%D8%A7%D9%84%D8%A7%D9%81%D8%B6%D9%84-06-23"
+                        "اެݪاެۅٛاެمࢪ", url=f"🤍  - تابع الاوامر في الاسفل ↓ : 
+
+• -› .شغل - بالرد على ملف صوتي او اسم أغنية
+
+• -› .تخطي - لتخطي اغنية في التشغيل
+
+• -› .كافي - لايقاف تشغيل جميع الاغاني
+
+• -› .اضبط - لضبط صوت حساب المساعد
+
+• -› .الانتضار - لرؤية قائمة الانتضار التشغيل
+
+• -› .ابحثلي - لبحث عن فيديو من اليوتيوب
+
+• -› .بحث - لتحميل اغنية من اليوتيوب
+
+• -› .كتم - لكتم صوت المساعد 
+
+• -› .بنك - لإضهار بنك البوت
+
+• -› .انضم - لدعوة حساب المساعد
+
+. شكراً لقرائتك الاوامر - أتمنى لك يوماً تعيساً 🦴."
                     ),
                     InlineKeyboardButton(
-                        "", url="https://t.me/Simple_Mundaa"
+                        "السورس", url="https://t.me/Ei222"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⚙️ ¦ الـسـورس", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "الـسورس", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                     InlineKeyboardButton(
-                        "🥇 ¦ الــكروب", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "قناه المطور 🥇", url=f"https://t.me/{GROUP_SUPPORT}"
                     )
                 ]
                 
@@ -73,12 +99,12 @@ async def start_(client: Client, message: Message):
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://te.legra.ph/file/bf9f444677e4d565542a6.jpg",
-        caption=f"""هلا عمري انا اقوا بوت في التليكرام.""",
+        caption=f"""هݪاެ حبيب اެني بۅٛت اެغاެني""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🥇 قناة السورس 🥇", url=f"https://t.me/VFF35")
+                        "🥇 قناة السورس 🥇", url=f"https://t.me/Ei222")
                 ]
             ]
         ),
@@ -89,12 +115,12 @@ async def start(client: Client, message: Message):
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://te.legra.ph/file/187646e964cd12329f1de.jpg",
-        caption=f"""لتنصيب بوت راسل مطور السورس""",
+        caption=f"ݪتنصيب بۅٛت ࢪاެسݪ اެݪمطۅٛࢪ""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "𝐒𝐈𝐅 𝐂𝐎𝐁𝐑𝐀️", url=f"https://t.me/QABNADLIB")
+                        "- 𝐓 .", url=f"https://t.me/TTTTZ9")
                 ]
             ]
         ),
