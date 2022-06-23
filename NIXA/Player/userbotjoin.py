@@ -40,7 +40,7 @@ async def join_group(client, message):
         )
         return
     await message.reply_text(
-        f"✅ **طلب المعلم دخلت**",
+        f"اެني فࢪحاެن هۅٛاެي ݪاެن نضميت اެهناެ ✓",
     )
 
 
@@ -49,7 +49,7 @@ async def join_group(client, message):
 @authorized_users_only
 async def leave_one(client, message):
     try:
-        await USER.send_message(message.chat.id, "✅ طلب المعلم تم مغادرتي")
+        await USER.send_message(message.chat.id, "اެنِيَ ࢪ࣪عَݪتَ عَݪيَكَمِ بَسِ طَݪعَتَ بَكَࢪاެمِتَيَ❤️‍🔥")
         await USER.leave_chat(message.chat.id)
     except BaseException:
         await message.reply_text(
