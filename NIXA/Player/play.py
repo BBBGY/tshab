@@ -127,7 +127,7 @@ async def generate_cover(thumbnail, title, userid, ctitle):
 
 
     
-@Client.on_message(command(["تشغيل", f"شغل"]) & other_filters)
+@Client.on_message(command(["تشغيل", f"ش", f"p", f"شغل", f"play"]) & other_filters)
 async def play(c: Client, m: Message):
     await m.delete()
     replied = m.reply_to_message
@@ -139,8 +139,8 @@ async def play(c: Client, m: Message):
                       InlineKeyboardButton("‣‣I", "skip"),
                       InlineKeyboardButton("▷", callback_data="cbresume"),
                   ],[
-                      InlineKeyboardButton(text="🥇 ¦ الــكروب", url=f"https://t.me/{GROUP_SUPPORT}"),
-                      InlineKeyboardButton(text="⚙️ ¦ الـسـورس", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                      InlineKeyboardButton(text="المطور", url=f"https://t.me/{GROUP_SUPPORT}"),
+                      InlineKeyboardButton(text="قناه السورس 🥇", url=f"https://t.me/{UPDATES_CHANNEL}"),
                   ],[
                       InlineKeyboardButton("•مسح•", callback_data="cls")],
                   ]
@@ -175,7 +175,7 @@ async def play(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "kicked":
             await m.reply_text(
-                f"@{ASSISTANT_NAME} **حساب المساعد محظور من المجموعه** {m.chat.title}\n\n» **الغي حظره واكتم انضم لكي ينضم المساعد.**"
+                f"@{ASSISTANT_NAME} **حساب المساعد محظور من المجموعه** {m.chat.title}\n\n» **الغي حظره واكتب انضم احسلك.**"
             )
             return
     except UserNotParticipant:
@@ -203,7 +203,7 @@ async def play(c: Client, m: Message):
                 )
     if replied:
         if replied.audio or replied.voice:
-            suhu = await replied.reply("📥 **جاري التحميل...**")
+            suhu = await replied.reply("جاري التحميل 🦴")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -221,7 +221,7 @@ async def play(c: Client, m: Message):
                 await suhu.delete()
                 await m.reply_photo(
                     photo=f"{IMG_1}",
-                    caption=f"💡 **تم اضافتها الى قائمة الانتظار »** `{pos}`\n\n🏷 **الاسم:** [{songname}]({link}) | `ᴍᴜsɪᴄ`\n💭 **الدردشة:** `{chat_id}`\n🎧 **طلب المعلم:** {m.from_user.mention()}",
+                    caption=f"💡 **تم اضافتها الى قائمة الانتظار »** `{pos}`\n\n🏷 **الاسم:** [{songname}]({link}) | `ᴍᴜsɪᴄ`\n💭 **الدردشة:** `{chat_id}`\n🎧 **طلب من الگي:** {m.from_user.mention()}",
                     reply_markup=keyboard,
                 )
             else:
@@ -238,7 +238,7 @@ async def play(c: Client, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=f"{IMG_2}",
-                    caption=f"🏷 **الاسم:** [{songname}]({link})\n💭 **الدردشة:** `{chat_id}`\n💡 **sᴛᴀᴛᴜs:** `ᴘʟᴀʏɪɴɢ`\n🎧 **طلب المعلم:** {requester}\n📹 **نوع المطلوب:** `اغنيه`",
+                    caption=f"🏷 **اسم الاغنيه:** [{songname}]({link})\n💭 **ايدي الدردشه:** `{chat_id}`\n💡 **sᴛᴀᴛᴜs:** `ᴘʟᴀʏɪɴɢ`\n🎧 **طلب من الحات:** {requester}\n📹 **نوع المطلوب:** `اغنيه`",
                     reply_markup=keyboard,
                 )
              except Exception as e:
@@ -249,7 +249,7 @@ async def play(c: Client, m: Message):
         if len(m.command) < 2:
          await m.reply_photo(
                      photo=f"{IMG_5}",
-                    caption="💬**اكتب: /شغل  او تشغيل بل رد على ملف صوتي**"
+                    caption="❤️‍🩹اكتب .شغل او تشغيل بالرد على ملف صوتي او اعطاء شي للبحث"
                     ,
                       reply_markup=InlineKeyboardMarkup(
                     [
@@ -261,12 +261,12 @@ async def play(c: Client, m: Message):
             )
         else:
             suhu = await m.reply_text(
-        f"**جاري التحميل**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+        f"جاري البحث❤️‍🔥"
     )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await suhu.edit("💬 **لم اجد شيئ للأسف.**")
+                await suhu.edit("💬 **ماكو شي أبحث عدل.**")
             else:
                 songname = search[0]
                 title = search[0]
@@ -290,7 +290,7 @@ async def play(c: Client, m: Message):
                         )
                         await m.reply_photo(
                             photo=image,
-                            caption=f"💡 **تم اضافتها الى قائمة الانتظار »** `{pos}`\n\n🏷 **الاسم:** [{songname[:22]}]({url}) | `الدقايق`\n**⏱ عدد:** `{duration}`\n🎧 **طلب المعلم:** {requester}",
+                            caption=f"💡 **تم اضافتها الى قائمة الانتظار »** `{pos}`\n\n🏷 **الاسم:** [{songname[:22]}]({url}) | `الدقايق`\n**⏱ عدد:** `{duration}`\n🎧 **طلب من الحلو:** {requester}",
                             reply_markup=keyboard,
                         )
                     else:
@@ -310,7 +310,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=image,
-                                caption=f"🏷 **الاسم:** [{songname[:22]}]({url})\n**⏱ المدة:** `{duration}`\n💡 **نوع المطلوب:** `موسيقى`\n🎧 **طلب المعلم:** {requester}",
+                                caption=f"🏷 **الاسم:** [{songname[:22]}]({url})\n**⏱ المدة:** `{duration}`\n💡 **نوع المطلوب:** `موسيقى`\n🎧 **طلب من الحلو:** {requester}",
                                 reply_markup=keyboard,
                             )
                         except Exception as ep:
